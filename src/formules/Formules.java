@@ -73,7 +73,7 @@ public class Formules {
 	 *
 	 * @param masseProjectile
 	 * @param velocite
-	 * @return
+	 * @return energie d'impact Ec en joules
 	 */
 	public double energieImpact(double masseProjectile, double velocite){
 		return (1/2)*(masseProjectile*(velocite*velocite));
