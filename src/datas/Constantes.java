@@ -15,7 +15,7 @@ public class Constantes {
 	public static String ligne = new String ("<html><br></html>");
 	
 	public static double graviteTerre = 9.81;
-	
+	public static double kgJouleTNT = 4184.0;
 	
 
 }
