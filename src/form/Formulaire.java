@@ -3,7 +3,11 @@ package form;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,6 +34,8 @@ public class Formulaire extends JFrame {
 	private JTextField jtf6 = new JTextField("Masse du projectile");
 	private JTextField jtf7 = new JTextField("Longueur de la base");
 
+	private JButton valider = new JButton ("Valider");
+
 	public Formulaire() {
 
 		this.setTitle("Catapulte");
@@ -41,44 +47,161 @@ public class Formulaire extends JFrame {
 		JPanel top = new JPanel();
 
 		jtf1.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf1);
 		label1.setPreferredSize(new Dimension(200, 30));
 		top.add(label1);
 		top.add(jtf1);
 
 		jtf2.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf2);
 		label2.setPreferredSize(new Dimension(200, 30));
 		top.add(label2);
 		top.add(jtf2);
 
 		jtf3.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf3);
 		label3.setPreferredSize(new Dimension(200, 30));
 		top.add(label3);
 		top.add(jtf3);
 
 		jtf4.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf4);
 		label4.setPreferredSize(new Dimension(200, 30));
 		top.add(label4);
 		top.add(jtf4);
 
 		jtf5.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf5);
 		label5.setPreferredSize(new Dimension(200, 30));
 		top.add(label5);
 		top.add(jtf5);
 
 		jtf6.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf6);
 		label6.setPreferredSize(new Dimension(200, 30));
 		top.add(label6);
 		top.add(jtf6);
 
 		jtf7.setPreferredSize(new Dimension(250, 30));
+		clickEvent(jtf7);
 		label7.setPreferredSize(new Dimension(200, 30));
 		top.add(label7);
 		top.add(jtf7);
+		
+
+		JPanel down = new JPanel();
+		down.add(valider);
+
 
 		conteneur.add(top, BorderLayout.CENTER);
+		conteneur.add(down, BorderLayout.SOUTH);
 		this.setContentPane(conteneur);
 		this.setVisible(true);
 
 	}
 
+	
+	/**
+	 * Rédéfinition du style formulaire
+	 * @param jtf
+	 */
+	public void clickEvent(JTextField jtf) {
+	
+		jtf.getFont().deriveFont(Font.ITALIC);
+		jtf.setForeground(Color.gray);
+		jtf.addMouseListener(new MouseListener() {       
+		    public void mouseClicked(MouseEvent e) {
+		        JTextField texteField = ((JTextField)e.getSource());
+		        texteField.setText("");
+		        texteField.getFont().deriveFont(Font.PLAIN);
+		        texteField.setForeground(Color.black);
+		        texteField.removeMouseListener(this);
+		    }
+
+			@Override
+			public void mousePressed(MouseEvent e) {}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {}
+
+			@Override
+			public void mouseExited(MouseEvent e) {}
+		});
+	}
+
+
+	public String getJtf1() {
+		return jtf1.getText();
+	}
+
+
+	public void setJtf1(JTextField jtf1) {
+		this.jtf1 = jtf1;
+	}
+
+
+	public String getJtf2() {
+		return jtf2.getText();
+	}
+
+
+	public void setJtf2(JTextField jtf2) {
+		this.jtf2 = jtf2;
+	}
+
+
+	public String getJtf3() {
+		return jtf3.getText();
+	}
+
+
+	public void setJtf3(JTextField jtf3) {
+		this.jtf3 = jtf3;
+	}
+
+
+	public String getJtf4() {
+		return jtf4.getText();
+	}
+
+
+	public void setJtf4(JTextField jtf4) {
+		this.jtf4 = jtf4;
+	}
+
+
+	public String getJtf5() {
+		return jtf5.getText();
+	}
+
+
+	public void setJtf5(JTextField jtf5) {
+		this.jtf5 = jtf5;
+	}
+
+
+	public String getJtf6() {
+		return jtf6.getText();
+	}
+
+
+	public void setJtf6(JTextField jtf6) {
+		this.jtf6 = jtf6;
+	}
+
+
+	public String getJtf7() {
+		return jtf7.getText();
+	}
+
+
+	public void setJtf7(JTextField jtf7) {
+		this.jtf7 = jtf7;
+	}
+	
+	
+	
 }
