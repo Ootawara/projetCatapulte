@@ -80,7 +80,7 @@ public class Formules {
 	}
 
 	/**
-	 * La construction envisagée est-elle viable ?
+	 * La construction envisagï¿½e est-elle viable ?
 	 * 
 	 * @param angleAlpha
 	 * @param lB
@@ -109,7 +109,6 @@ public class Formules {
 	 * Equivalence Joule et gramme de TNT
 	 * 
 	 * @param energieJoule
-	 * @param kgJouleTNT
 	 * @return Energie TNT en joule
 	 */
 	public double energieTNT(double energieJoule) {
