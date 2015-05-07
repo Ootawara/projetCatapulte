@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -26,7 +28,7 @@ public class Formulaire extends JFrame {
 	private JLabel label6 = new JLabel(Constantes.mp);
 	private JLabel label7 = new JLabel(Constantes.baseLR);
 
-	private JTextField jtf1 = new JTextField("Hauteur de la butée");
+	private JTextField jtf1 = new JTextField("Hauteur de la butï¿½e");
 	private JTextField jtf2 = new JTextField("Longueur du bras");
 	private JTextField jtf3 = new JTextField("Masse du bras");
 	private JTextField jtf4 = new JTextField("Angle de la force de traction");
@@ -87,11 +89,11 @@ public class Formulaire extends JFrame {
 		label7.setPreferredSize(new Dimension(200, 30));
 		top.add(label7);
 		top.add(jtf7);
-		
+
+		valider.addActionListener(new BoutonListener());
 
 		JPanel down = new JPanel();
 		down.add(valider);
-
 
 		conteneur.add(top, BorderLayout.CENTER);
 		conteneur.add(down, BorderLayout.SOUTH);
@@ -100,9 +102,23 @@ public class Formulaire extends JFrame {
 
 	}
 
-	
+	public class BoutonListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			Siege siege = new Siege();
+			siege.setAngleAlpha(Double.valueOf(jtf1.getText()));
+			siege.setAngleForceTraction(Double.valueOf(jtf4.getText()));
+			siege.setBaseLR(Double.valueOf(jtf7.getText()));
+			siege.setBrasLM(Double.valueOf(jtf2.getText()));
+			siege.setMasseMB(Double.valueOf(jtf3.getText()));
+			siege.setMc(Double.valueOf(jtf5.getText()));
+			siege.setMp(Double.valueOf(jtf6.getText()));
+			System.out.println(siege.toString());
+		}
+	}
+
 	/**
-	 * Rédéfinition du style formulaire
+	 * Rï¿½dï¿½finition du style formulaire
 	 * @param jtf
 	 */
 	public void clickEvent(JTextField jtf) {
