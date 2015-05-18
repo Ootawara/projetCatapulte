@@ -6,43 +6,43 @@ import bean.Catapulte;
  * Created by tamiand on 07/05/2015.
  */
 public class Siege {
-
+	
     Catapulte catapulte;
-    private double angleAlpha; private double angleForceTraction;
-    private double brasLM; private double masseMB; private double mc;
-    private double mp; private double baseLR;
+    private double angleAlphaHauteurButee; private double angleBetaForceTraction;
+    private double longueurBrasLB; private double masseBrasMB; private double masseContrepoidsMC;
+    private double masseProjectileMP; private double longueurBaseLR;
 
     //constructor
     public Siege(){}
 
     //getters
-    public double getAngleAlpha(){return angleAlpha;}
-    public double getAngleForceTraction(){return angleAlpha;}
-    public double getBrasLM(){return angleAlpha;}
-    public double getMasseMB(){return angleAlpha;}
-    public double getMc(){return angleAlpha;}
-    public double getMp(){return angleAlpha;}
-    public double getBaseLR(){return angleAlpha;}
+    public double getAngleAlpha(){return angleAlphaHauteurButee;}
+    public double getAngleForceTraction(){return angleBetaForceTraction;}
+    public double getBrasLM(){return longueurBrasLB;}
+    public double getMasseMB(){return masseBrasMB;}
+    public double getMc(){return masseContrepoidsMC;}
+    public double getMp(){return masseProjectileMP;}
+    public double getBaseLR(){return longueurBaseLR;}
 
     //setters
-    public void setAngleAlpha(double d){this.angleAlpha=d;}
-    public void setAngleForceTraction(double d){this.angleForceTraction=d;}
-    public void setBrasLM(double d){this.brasLM=d;}
-    public void setMasseMB(double d){this.masseMB=d;}
-    public void setMc(double d){this.mc=d;}
-    public void setMp(double d){this.mp=d;}
-    public void setBaseLR(double d){this.baseLR=d;}
+    public void setAngleAlpha(double d){this.angleAlphaHauteurButee=d;}
+    public void setAngleForceTraction(double d){this.angleBetaForceTraction=d;}
+    public void setBrasLM(double d){this.longueurBrasLB=d;}
+    public void setMasseMB(double d){this.masseBrasMB=d;}
+    public void setMc(double d){this.masseContrepoidsMC=d;}
+    public void setMp(double d){this.masseProjectileMP=d;}
+    public void setBaseLR(double d){this.longueurBaseLR=d;}
 
     @Override
     public String toString() {
         return "Siege{" +
-                " angleAlpha=" + angleAlpha +
-                ", angleForceTraction=" + angleForceTraction +
-                ", brasLM=" + brasLM +
-                ", masseMB=" + masseMB +
-                ", mc=" + mc +
-                ", mp=" + mp +
-                ", baseLR=" + baseLR +
+                " angleAlphaHauteurButee=" + angleAlphaHauteurButee +
+                ", angleBetaForceTraction=" + angleBetaForceTraction +
+                ", longueurBrasLB=" + longueurBrasLB +
+                ", masseBrasMB=" + masseBrasMB +
+                ", masseContrepoidsMC=" + masseContrepoidsMC +
+                ", masseProjectileMP=" + masseProjectileMP +
+                ", longueurBaseLR=" + longueurBaseLR +
                 '}';
     }
 }
